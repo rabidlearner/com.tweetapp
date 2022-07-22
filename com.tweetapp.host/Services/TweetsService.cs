@@ -1,4 +1,4 @@
-﻿using com.tweetapp.data.Dao;
+﻿using com.tweetapp.data.DataAccessObject;
 using com.tweetapp.models;
 using System;
 
@@ -22,7 +22,7 @@ namespace com.tweetapp.host.Services
             foreach(var tweet in tweets)
             {
                 Console.WriteLine();
-                Console.WriteLine("{0} - {1}",tweet.User.FirstName,tweet.User.LastName);
+                Console.WriteLine("{0}_{1}",tweet.User.FirstName,tweet.User.LastName);
                 Console.WriteLine("{0}", tweet.Message);
                 Console.WriteLine();                
             }
@@ -36,7 +36,7 @@ namespace com.tweetapp.host.Services
             foreach (var tweet in tweets)
             {
                 Console.WriteLine();
-                Console.WriteLine("{0} - {1}", tweet.User.FirstName, tweet.User.LastName);
+                Console.WriteLine("{0}_{1}", tweet.User.FirstName, tweet.User.LastName);
                 Console.WriteLine("{0}", tweet.Message);
                 Console.WriteLine();
             }            
@@ -48,7 +48,7 @@ namespace com.tweetapp.host.Services
            
             while(string.IsNullOrWhiteSpace(message))
             {
-                Console.WriteLine("Please enter your tweet here..");
+                Console.WriteLine("Kindly type your tweet here..");
                 message = Console.ReadLine();
             }
             Tweet tweet = new Tweet()

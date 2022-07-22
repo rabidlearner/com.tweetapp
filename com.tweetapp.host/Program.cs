@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using com.tweetapp.data.Dao;
+using com.tweetapp.data.DataAccessObject;
 using com.tweetapp.host.Services;
 using com.tweetapp.models;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,13 +15,13 @@ namespace com.tweetapp.host
         private static TweetsService tweetsService = new TweetsService();
     static void Main(string[] args)
         {
-            Initialize();
+            AppStart();
             while(true)
             {
                 try
                 {
-                    ShowMenu();
-                    Navigate();
+                    Menu();
+                    Navigation();
                 }
                 catch(Exception ex)
                 {
@@ -33,7 +33,7 @@ namespace com.tweetapp.host
             
             
         }
-        private static void Initialize()
+        private static void AppStart()
         {
             Mapper.CreateMap<User, data.Context.Entities.User>();
             Mapper.CreateMap<data.Context.Entities.User,User>();
@@ -41,7 +41,7 @@ namespace com.tweetapp.host
             Mapper.CreateMap<data.Context.Entities.Tweet,Tweet>();           
             
         }
-        private static void ShowMenu()
+        private static void Menu()
         {
             if(user == null)
             {
@@ -59,7 +59,7 @@ namespace com.tweetapp.host
                 Console.WriteLine("6. Logout");
             }
         }
-        private static void Navigate()
+        private static void Navigation()
         {
             var input = Console.ReadLine();
             int option;
@@ -69,20 +69,20 @@ namespace com.tweetapp.host
             }
             catch(Exception)
             {
-                throw new Exception("Please enter a valid input");                
+                throw new Exception("Kindly enter a valid navigational input as a numeric value");                
             }
             if(user == null)
             {
-                NavigateUnlogged(option);
+                NavigationUnlogged(option);
             }
             else
             {
-                NavigateLogged(option);
+                NavigationLogged(option);
             }
             
             
         }
-        private static void NavigateLogged(int option)
+        private static void NavigationLogged(int option)
         {
             switch (option)
             {
@@ -109,7 +109,7 @@ namespace com.tweetapp.host
                     break;
             }
         }
-        private static void NavigateUnlogged(int option)
+        private static void NavigationUnlogged(int option)
         {
             switch (option)
             {

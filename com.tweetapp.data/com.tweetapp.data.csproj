@@ -56,11 +56,11 @@
     <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Context\Entities\Tweet.cs" />
     <Compile Include="Context\Entities\User.cs" />
-    <Compile Include="Dao\TweetsDao.cs" />
-    <Compile Include="Dao\UsersDao.cs" />
-    <Compile Include="Migrations\202207140428552_initial.cs" />
-    <Compile Include="Migrations\202207140428552_initial.Designer.cs">
-      <DependentUpon>202207140428552_initial.cs</DependentUpon>
+    <Compile Include="DataAccessObject\TweetsDao.cs" />
+    <Compile Include="DataAccessObject\UsersDao.cs" />
+    <Compile Include="Migrations\202207151220401_init_model.cs" />
+    <Compile Include="Migrations\202207151220401_init_model.Designer.cs">
+      <DependentUpon>202207151220401_init_model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202207140428552_initial.resx">
-      <DependentUpon>202207140428552_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207151220401_init_model.resx">
+      <DependentUpon>202207151220401_init_model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

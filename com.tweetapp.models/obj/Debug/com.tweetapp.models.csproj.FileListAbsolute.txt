@@ -10,3 +10,9 @@ C:\Users\922228\OneDrive - Cognizant\Desktop\Tweet app project\com.tweetapp\com.
 C:\Users\922228\OneDrive - Cognizant\Desktop\Tweet app project\com.tweetapp\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.csproj.CoreCompileInputs.cache
 C:\Users\922228\OneDrive - Cognizant\Desktop\Tweet app project\com.tweetapp\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.dll
 C:\Users\922228\OneDrive - Cognizant\Desktop\Tweet app project\com.tweetapp\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.pdb
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\bin\Debug\com.tweetapp.models.dll
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\bin\Debug\com.tweetapp.models.pdb
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.csproj.AssemblyReference.cache
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.csproj.CoreCompileInputs.cache
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.dll
+C:\Users\tonmo\Source\Repos\com.tweetapp\com.tweetapp.models\obj\Debug\com.tweetapp.models.pdb

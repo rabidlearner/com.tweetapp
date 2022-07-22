@@ -1,4 +1,4 @@
-﻿using com.tweetapp.data.Dao;
+﻿using com.tweetapp.data.DataAccessObject;
 using com.tweetapp.models;
 using System;
 
@@ -22,7 +22,7 @@ namespace com.tweetapp.host.Services
             foreach(var user in users)
             {
                 Console.WriteLine();
-                Console.WriteLine("{0} . Name:{1} {2}  Email:{3}  Contact:{4}", user.Id, user.FirstName, user.LastName, user.Email, user.ContactNumber);
+                Console.WriteLine("{0} || Name:{1} {2}  Email:{3}  Contact:{4}", user.Id, user.FirstName, user.LastName, user.Email, user.ContactNumber);
                 Console.WriteLine();
             }
         }
@@ -37,27 +37,27 @@ namespace com.tweetapp.host.Services
             {
                 while (validator.ValidateEmail(email))
                 {
-                    Console.WriteLine("Please enter valid Email - Ex: virat@gmail.com");
+                    Console.WriteLine("Kindly enter a valid Email Address- Example: ramesh@yahoo.com");
                     email = Console.ReadLine();
                 }
                 user = usersDao.GetUser(email);
 
                 if (user == null)
                 {
-                    Console.WriteLine("Entered email doesn't exist in our records, please verify and try again");
+                    Console.WriteLine("Entered email address doesn't exist in our records, kindly verify and try again");
                     email = "";
                     continue;
                 }
 
                 while (validator.ValidatePassword(password))
                 {
-                    Console.WriteLine("Please enter valid Password");
+                    Console.WriteLine("Kindly enter valid Password");
                     password = Console.ReadLine();
                 }
                 
                 if(user.Password!=password)
                 {
-                    Console.WriteLine("Password is incorrect, please verify and try again");
+                    Console.WriteLine("Confirm the Password again. It should match your original Password");
                     password = "";                    
                     continue;
                 }
@@ -82,25 +82,25 @@ namespace com.tweetapp.host.Services
             User uservalidator = null;
             while (validator.ValidateName(firstName))
             {
-                Console.WriteLine("Please enter Valid First Name - Ex: Virat");
+                Console.WriteLine("Kindly enter valid First Name - Example: Ramesh");
                 firstName = Console.ReadLine();
             }
             while(validator.ValidateName(lastName))
             {
-                Console.WriteLine("Please enter Valid Last Name - Ex:Kohli");
+                Console.WriteLine("Kindly enter valid Last Name - Example: Sharma");
                 lastName = Console.ReadLine();
             }
             while (validator.ValidateEmail(email) || uservalidator != null)
             {
                 if(uservalidator != null)
                 {
-                    Console.WriteLine("Email already registered");
+                    Console.WriteLine("Email has already been registered");
                     email = "";
                     uservalidator = null;
                 }
                 else
                 {
-                    Console.WriteLine("Please enter valid Email - Ex: virat@gmail.com");
+                    Console.WriteLine("Kindly enter valid Email Address - Example: ramesh@yahoo.com");
                     email = Console.ReadLine();
                     uservalidator = usersDao.GetUser(email);
                 }                
@@ -108,18 +108,18 @@ namespace com.tweetapp.host.Services
             
             while (validator.ValidatePassword(password))
             {
-                Console.WriteLine("Please enter valid Password min 8 digits, a number, Uppercase and lowercase");
+                Console.WriteLine("Kindly enter valid Password containing minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
                 password = Console.ReadLine();
             }
             
             while (password != confirmPassword)
             {
-                Console.WriteLine("Please enter valid confirmPassword");
+                Console.WriteLine("Confirm the Password again. It should match your original Password");
                 confirmPassword = Console.ReadLine();
             }
-            while (validator.validatePhone(contactNumber))
+            while (validator.ValidatePhone(contactNumber))
             {
-                Console.WriteLine("Please enter valid 10 digit Mobile number ");
+                Console.WriteLine("Kindly enter a valid 10 digit Mobile number");
                 contactNumber = Console.ReadLine();
             }
             User user = new User()
@@ -146,13 +146,13 @@ namespace com.tweetapp.host.Services
             {
                 while (validator.ValidateEmail(email))
                 {
-                    Console.WriteLine("Please enter valid Email - Ex: virat@gmail.com");
+                    Console.WriteLine("Kindly enter valid Email Address - Example: ramesh@yahoo.com");
                     email = Console.ReadLine();
                 }
 
-                while (validator.validatePhone(contactNumber))
+                while (validator.ValidatePhone(contactNumber))
                 {
-                    Console.WriteLine("Please enter valid 10 digit Mobile number ");
+                    Console.WriteLine("Kindly enter a valid 10 digit Mobile number");
                     contactNumber = Console.ReadLine();
                 }
 
@@ -160,12 +160,12 @@ namespace com.tweetapp.host.Services
 
                 if (user == null)
                 {
-                    Console.WriteLine("Entered email doesn't exist in our records, please verify and try again");
+                    Console.WriteLine("Entered email does not exist in our records, kindly verify and try again");
                     continue;
                 }
                 else if (user.ContactNumber != contactNumber)
                 {
-                    Console.WriteLine("Entered contact number is incorrect, please verify and try again");
+                    Console.WriteLine("Entered contact number is incorrect, kindly verify and try again");
                     continue;
                 }
                 else
@@ -176,13 +176,13 @@ namespace com.tweetapp.host.Services
             }
             while (validator.ValidatePassword(password))
             {
-                Console.WriteLine("Please enter valid reset Password - min 8 digits, a number, Uppercase and lowercase");
+                Console.WriteLine("Kindly enter valid Password containing minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
                 password = Console.ReadLine();
             }
 
             while (password != confirmPassword)
             {
-                Console.WriteLine("Please enter valid confirmPassword");
+                Console.WriteLine("Confirm the Password again. It should match your original Password");
                 confirmPassword = Console.ReadLine();
             }
             user.Password = password;
@@ -196,13 +196,13 @@ namespace com.tweetapp.host.Services
             
             while (validator.ValidatePassword(password))
             {
-                Console.WriteLine("Please enter valid reset Password - min 8 digits, a number, Uppercase and lowercase");
+                Console.WriteLine("Kindly enter valid Password for reset containing minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
                 password = Console.ReadLine();
             }
 
             while (password != confirmPassword)
             {
-                Console.WriteLine("Please enter valid confirmPassword");
+                Console.WriteLine("Confirm the Password again. It should match your original Password");
                 confirmPassword = Console.ReadLine();
             }
             user.Password = password;
